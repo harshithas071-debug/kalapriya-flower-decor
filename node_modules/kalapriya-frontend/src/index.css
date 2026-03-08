@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Jost', sans-serif;
+    background-color: #FDF8F0;
+    color: #2D1500;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-10 py-3 bg-gold text-deep font-semibold tracking-widest uppercase text-sm border-none cursor-pointer transition-all duration-300 hover:bg-gold-light hover:-translate-y-0.5;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  }
+  .btn-secondary {
+    @apply px-10 py-3 bg-transparent text-gold-light font-normal tracking-widest uppercase text-sm border border-gold/50 cursor-pointer transition-all duration-300 hover:border-gold hover:bg-gold/10;
+  }
+  .btn-admin {
+    @apply px-5 py-1.5 border border-gold bg-transparent text-gold font-body text-xs tracking-widest uppercase cursor-pointer transition-all duration-300 rounded-sm hover:bg-gold hover:text-deep;
+  }
+  .section-eyebrow {
+    @apply text-xs tracking-[0.4em] uppercase text-gold mb-4 flex items-center justify-center gap-3;
+  }
+  .section-eyebrow::before,
+  .section-eyebrow::after {
+    content: '';
+    @apply w-8 h-px bg-gold;
+  }
+  .section-title {
+    @apply font-display font-light text-deep leading-tight;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+  }
+  .form-input {
+    @apply px-4 py-3 border border-gold/30 bg-white/70 text-deep font-body text-sm outline-none transition-all duration-300 focus:border-gold w-full;
+  }
+  .form-label {
+    @apply text-xs tracking-wider uppercase text-muted font-medium;
+  }
+  .cat-tab {
+    @apply px-5 py-2 border border-gold/40 bg-transparent text-warm font-body text-xs tracking-wide cursor-pointer transition-all duration-300 rounded-sm hover:border-gold hover:text-gold;
+  }
+  .cat-tab-active {
+    @apply bg-gold text-deep border-gold font-semibold;
+  }
+  .gallery-card {
+    @apply relative overflow-hidden cursor-pointer bg-[#EDE0C8] border border-gold/15;
+    aspect-ratio: 4/3;
+  }
+  .fav-badge {
+    @apply absolute top-2.5 right-2.5 z-10 bg-deep/55 border border-white/20 backdrop-blur-sm cursor-pointer rounded-full w-9 h-9 flex items-center justify-center text-white/75 transition-all duration-300 shadow-lg hover:scale-110 hover:bg-deep/80 hover:text-red-400;
+  }
+  .fav-badge-active {
+    @apply text-red-400 bg-deep/75 border-red-400/40;
+  }
+  .admin-nav-item {
+    @apply flex items-center gap-3 px-6 py-3 text-white/60 text-sm cursor-pointer transition-all duration-200 border-l-4 border-transparent hover:text-gold-light hover:bg-gold/10 w-full text-left bg-transparent border-t-0 border-r-0 border-b-0;
+  }
+  .admin-nav-item-active {
+    @apply text-gold bg-gold/15 border-l-4 border-gold;
+  }
+  .stat-card {
+    @apply bg-white p-6 border border-gold/20 relative overflow-hidden;
+  }
+  .stat-card::after {
+    content: '';
+    @apply absolute bottom-0 left-0 right-0 h-0.5 bg-gold;
+  }
+  .enquiry-card {
+    @apply p-5 border border-gold/20 bg-cream relative;
+  }
+  .wa-float {
+  @apply fixed bottom-8 right-8 z-50 bg-[#25D366] text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg cursor-pointer transition-all duration-300 hover:scale-110 hover:bg-[#128C7E] no-underline;
+  animation: pulse-wa 2s infinite;
+}
+}
+
+@layer utilities {
+  .text-muted { color: #8A7A6A; }
+  .font-display { font-family: 'Cormorant Garamond', serif; }
+  .font-body { font-family: 'Jost', sans-serif; }
+}
+
+@keyframes pulse-wa {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+  50% { box-shadow: 0 4px 30px rgba(37,211,102,0.7); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes bounce-scroll {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-8px); }
+}
+.animate-fade-up { animation: fadeUp 1s ease both; }
+.animate-fade-in { animation: fadeIn 0.2s ease; }
+.animate-bounce-scroll { animation: bounce-scroll 2s infinite; }
