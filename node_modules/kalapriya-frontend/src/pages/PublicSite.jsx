@@ -346,7 +346,7 @@ function PublicSite({onAdmin,gallery,favs,toggleFav,addEnquiry,showToast}){
                 <h3 style={{fontWeight:700,fontSize:"1.4rem",color:dark,marginBottom:"1.5rem"}}>Get In Touch</h3>
                 {[
                   [<PhoneIcon/>,"+91 86606 10864","PHONE"],
-                  [<MailIcon/>,"kalapriyadecorations@gmail.com","EMAIL"],
+                  [<MailIcon/>,"kalapriyaflowerdecorations@gmail.com","EMAIL"],
                   [<PinIcon/>,"Chikkaballapur, Karnataka, India","ADDRESS"],
                 ].map(([icon,val,label])=>(
                   <div key={label} style={{display:"flex",gap:"1rem",alignItems:"flex-start",marginBottom:"1.2rem"}}>
